@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "keystone dev",
+    "seed-data": "keystone dev --seed-data",
     "start": "keystone start",
     "build": "keystone build",
     "postinstall": "keystone postinstall"

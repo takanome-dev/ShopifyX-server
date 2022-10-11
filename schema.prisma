@@ -24,6 +24,9 @@ model Product {
   name        String         @default("")
   description String         @default("")
   price       Int?
+  stock       Int?
+  createdAt   DateTime?      @default(now())
+  updatedAt   DateTime?
   status      String?        @default("DRAFT")
   photo       ProductImage[] @relation("ProductImage_product")
 }

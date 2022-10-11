@@ -98,6 +98,9 @@ type Product {
   name: String
   description: String
   price: Int
+  stock: Int
+  createdAt: DateTime
+  updatedAt: DateTime
   status: String
   photo(
     where: ProductImageWhereInput! = {}
@@ -107,6 +110,9 @@ type Product {
   ): [ProductImage!]
   photoCount(where: ProductImageWhereInput! = {}): Int
 }
+
+scalar DateTime
+  @specifiedBy(url: "https://datatracker.ietf.org/doc/html/rfc3339#section-5.6")
 
 input ProductWhereUniqueInput {
   id: ID
@@ -120,6 +126,9 @@ input ProductWhereInput {
   name: StringFilter
   description: StringFilter
   price: IntNullableFilter
+  stock: IntNullableFilter
+  createdAt: DateTimeNullableFilter
+  updatedAt: DateTimeNullableFilter
   status: StringNullableFilter
   photo: ProductImageManyRelationFilter
 }
@@ -133,6 +142,17 @@ input IntNullableFilter {
   gt: Int
   gte: Int
   not: IntNullableFilter
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: DateTimeNullableFilter
 }
 
 input StringNullableFilter {
@@ -174,6 +194,9 @@ input ProductOrderByInput {
   name: OrderDirection
   description: OrderDirection
   price: OrderDirection
+  stock: OrderDirection
+  createdAt: OrderDirection
+  updatedAt: OrderDirection
   status: OrderDirection
 }
 
@@ -181,6 +204,9 @@ input ProductUpdateInput {
   name: String
   description: String
   price: Int
+  stock: Int
+  createdAt: DateTime
+  updatedAt: DateTime
   status: String
   photo: ProductImageRelateToManyForUpdateInput
 }
@@ -201,6 +227,9 @@ input ProductCreateInput {
   name: String
   description: String
   price: Int
+  stock: Int
+  createdAt: DateTime
+  updatedAt: DateTime
   status: String
   photo: ProductImageRelateToManyForCreateInput
 }

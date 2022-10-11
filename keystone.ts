@@ -6,16 +6,21 @@ import { lists } from './schemas';
 
 // Keystone auth is configured separately - check out the basic auth setup we are importing from our auth file.
 import { withAuth, session } from './auth';
+import { insertSeedData } from './seed-data';
 
 export default withAuth(
   // Using the config function helps typescript guide you to the available options.
   // TODO: add server with cors options
   config({
     // the db sets the database provider - we're using sqlite for the fastest startup experience
-    // TODO: add data seeding here...
     db: {
       provider: 'sqlite',
       url: 'file:./keystone.db',
+      async onConnect(keystone) {
+        if (process.argv.includes('--seed-data')) {
+          await insertSeedData(keystone);
+        }
+      },
     },
     // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {
