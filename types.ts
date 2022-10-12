@@ -7,8 +7,8 @@ export interface Product {
   price: number;
   stock: number;
   photo: Image;
-  createdBy: string | null;
-  updatedBy: string | null;
+  createdBy?: string | null;
+  updatedBy?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -27,7 +27,8 @@ export interface Image {
     height: number;
     format: string;
     resource_type: string;
-    created_at: FieldTypeFunc<BaseListTypeInfo>;
+    created_at: FieldTypeFunc<BaseListTypeInfo> | string;
+    // created_at: FieldTypeFunc<BaseListTypeInfo>;
     tags: string[];
     bytes: number;
     type: string;

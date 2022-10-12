@@ -9,7 +9,7 @@ export async function insertSeedData({ prisma }: KeystoneContext) {
 
     const { id } = await prisma.productImage.create({
       data: {
-        image: JSON.stringify(product.photo),
+        image: product.photo,
         altText: product.description,
       },
     });

@@ -48,7 +48,13 @@ input StringFilter {
   contains: String
   startsWith: String
   endsWith: String
+  mode: QueryMode
   not: NestedStringFilter
+}
+
+enum QueryMode {
+  default
+  insensitive
 }
 
 input NestedStringFilter {
@@ -102,13 +108,7 @@ type Product {
   createdAt: DateTime
   updatedAt: DateTime
   status: String
-  photo(
-    where: ProductImageWhereInput! = {}
-    orderBy: [ProductImageOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductImage!]
-  photoCount(where: ProductImageWhereInput! = {}): Int
+  photo: ProductImage
 }
 
 scalar DateTime
@@ -130,7 +130,7 @@ input ProductWhereInput {
   createdAt: DateTimeNullableFilter
   updatedAt: DateTimeNullableFilter
   status: StringNullableFilter
-  photo: ProductImageManyRelationFilter
+  photo: ProductImageWhereInput
 }
 
 input IntNullableFilter {
@@ -166,6 +166,7 @@ input StringNullableFilter {
   contains: String
   startsWith: String
   endsWith: String
+  mode: QueryMode
   not: NestedStringNullableFilter
 }
 
@@ -181,12 +182,6 @@ input NestedStringNullableFilter {
   startsWith: String
   endsWith: String
   not: NestedStringNullableFilter
-}
-
-input ProductImageManyRelationFilter {
-  every: ProductImageWhereInput
-  some: ProductImageWhereInput
-  none: ProductImageWhereInput
 }
 
 input ProductOrderByInput {
@@ -208,14 +203,13 @@ input ProductUpdateInput {
   createdAt: DateTime
   updatedAt: DateTime
   status: String
-  photo: ProductImageRelateToManyForUpdateInput
+  photo: ProductImageRelateToOneForUpdateInput
 }
 
-input ProductImageRelateToManyForUpdateInput {
-  disconnect: [ProductImageWhereUniqueInput!]
-  set: [ProductImageWhereUniqueInput!]
-  create: [ProductImageCreateInput!]
-  connect: [ProductImageWhereUniqueInput!]
+input ProductImageRelateToOneForUpdateInput {
+  create: ProductImageCreateInput
+  connect: ProductImageWhereUniqueInput
+  disconnect: Boolean
 }
 
 input ProductUpdateArgs {
@@ -231,12 +225,12 @@ input ProductCreateInput {
   createdAt: DateTime
   updatedAt: DateTime
   status: String
-  photo: ProductImageRelateToManyForCreateInput
+  photo: ProductImageRelateToOneForCreateInput
 }
 
-input ProductImageRelateToManyForCreateInput {
-  create: [ProductImageCreateInput!]
-  connect: [ProductImageWhereUniqueInput!]
+input ProductImageRelateToOneForCreateInput {
+  create: ProductImageCreateInput
+  connect: ProductImageWhereUniqueInput
 }
 
 type ProductImage {
@@ -510,11 +504,6 @@ enum KeystoneAdminUIFieldMetaItemViewFieldMode {
   edit
   read
   hidden
-}
-
-enum QueryMode {
-  default
-  insensitive
 }
 
 type KeystoneAdminUISort {

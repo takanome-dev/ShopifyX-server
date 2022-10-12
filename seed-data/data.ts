@@ -1,5 +1,11 @@
-import { timestamp } from '@keystone-6/core/fields';
 import { Product } from '../types';
+
+// Sometime in the last 30 days
+function timestamp() {
+  const stampy =
+    Date.now() - Math.floor(Math.random() * 1000 * 60 * 60 * 24 * 30);
+  return new Date(stampy).toISOString();
+}
 
 export const products: Product[] = [
   {
@@ -22,11 +28,7 @@ export const products: Product[] = [
         height: 457,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 27871,
         type: 'upload',
@@ -38,8 +40,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: null,
-    updatedBy: null,
+    // createdBy: null,
+    // updatedBy: null,
     updatedAt: '2020-12-19T21:35:35.739Z',
     createdAt: '2020-12-19T21:35:35.739Z',
   },
@@ -63,11 +65,7 @@ export const products: Product[] = [
         height: 640,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 45455,
         type: 'upload',
@@ -79,8 +77,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:45:20.833Z',
     createdAt: '2020-01-23T21:45:20.833Z',
   },
@@ -104,11 +102,7 @@ export const products: Product[] = [
         height: 2000,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 202924,
         type: 'upload',
@@ -120,8 +114,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:45:36.012Z',
     createdAt: '2020-01-23T21:45:36.012Z',
   },
@@ -145,11 +139,7 @@ export const products: Product[] = [
         height: 1490,
         format: 'png',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 2454948,
         type: 'upload',
@@ -161,8 +151,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:45:58.336Z',
     createdAt: '2020-01-23T21:45:58.336Z',
   },
@@ -186,11 +176,7 @@ export const products: Product[] = [
         height: 735,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 183071,
         type: 'upload',
@@ -202,8 +188,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:46:21.015Z',
     createdAt: '2020-01-23T21:46:21.015Z',
   },
@@ -227,11 +213,7 @@ export const products: Product[] = [
         height: 1144,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 286643,
         type: 'upload',
@@ -243,8 +225,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:46:40.526Z',
     createdAt: '2020-01-23T21:46:40.526Z',
   },
@@ -268,11 +250,7 @@ export const products: Product[] = [
         height: 683,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 146817,
         type: 'upload',
@@ -284,8 +262,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:47:11.415Z',
     createdAt: '2020-01-23T21:47:11.415Z',
   },
@@ -309,11 +287,7 @@ export const products: Product[] = [
         height: 1004,
         format: 'png',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 953657,
         type: 'upload',
@@ -325,8 +299,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:47:41.358Z',
     createdAt: '2020-01-23T21:47:41.358Z',
   },
@@ -350,11 +324,7 @@ export const products: Product[] = [
         height: 2000,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 515360,
         type: 'upload',
@@ -366,8 +336,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:48:13.812Z',
     createdAt: '2020-01-23T21:48:13.812Z',
   },
@@ -391,11 +361,7 @@ export const products: Product[] = [
         height: 650,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 71291,
         type: 'upload',
@@ -407,8 +373,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:48:34.398Z',
     createdAt: '2020-01-23T21:48:34.398Z',
   },
@@ -432,11 +398,7 @@ export const products: Product[] = [
         height: 800,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 180261,
         type: 'upload',
@@ -448,8 +410,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:48:48.633Z',
     createdAt: '2020-01-23T21:48:48.633Z',
   },
@@ -473,11 +435,7 @@ export const products: Product[] = [
         height: 372,
         format: 'jpg',
         resource_type: 'image',
-        created_at: timestamp({
-          defaultValue: {
-            kind: 'now',
-          },
-        }),
+        created_at: timestamp(),
         tags: [],
         bytes: 50754,
         type: 'upload',
@@ -489,8 +447,8 @@ export const products: Product[] = [
         original_filename: 'file',
       },
     },
-    createdBy: '5de9a29642ca551f24c596ba',
-    updatedBy: '5de9a29642ca551f24c596ba',
+    // createdBy: '5de9a29642ca551f24c596ba',
+    // updatedBy: '5de9a29642ca551f24c596ba',
     updatedAt: '2020-01-23T21:49:01.569Z',
     createdAt: '2020-01-23T21:49:01.569Z',
   },
