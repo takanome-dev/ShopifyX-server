@@ -48,7 +48,13 @@ input StringFilter {
   contains: String
   startsWith: String
   endsWith: String
+  mode: QueryMode
   not: NestedStringFilter
+}
+
+enum QueryMode {
+  default
+  insensitive
 }
 
 input NestedStringFilter {
@@ -98,15 +104,15 @@ type Product {
   name: String
   description: String
   price: Int
+  stock: Int
+  createdAt: DateTime
+  updatedAt: DateTime
   status: String
-  photo(
-    where: ProductImageWhereInput! = {}
-    orderBy: [ProductImageOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductImage!]
-  photoCount(where: ProductImageWhereInput! = {}): Int
+  photo: ProductImage
 }
+
+scalar DateTime
+  @specifiedBy(url: "https://datatracker.ietf.org/doc/html/rfc3339#section-5.6")
 
 input ProductWhereUniqueInput {
   id: ID
@@ -120,8 +126,11 @@ input ProductWhereInput {
   name: StringFilter
   description: StringFilter
   price: IntNullableFilter
+  stock: IntNullableFilter
+  createdAt: DateTimeNullableFilter
+  updatedAt: DateTimeNullableFilter
   status: StringNullableFilter
-  photo: ProductImageManyRelationFilter
+  photo: ProductImageWhereInput
 }
 
 input IntNullableFilter {
@@ -135,6 +144,17 @@ input IntNullableFilter {
   not: IntNullableFilter
 }
 
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: DateTimeNullableFilter
+}
+
 input StringNullableFilter {
   equals: String
   in: [String!]
@@ -146,6 +166,7 @@ input StringNullableFilter {
   contains: String
   startsWith: String
   endsWith: String
+  mode: QueryMode
   not: NestedStringNullableFilter
 }
 
@@ -163,17 +184,14 @@ input NestedStringNullableFilter {
   not: NestedStringNullableFilter
 }
 
-input ProductImageManyRelationFilter {
-  every: ProductImageWhereInput
-  some: ProductImageWhereInput
-  none: ProductImageWhereInput
-}
-
 input ProductOrderByInput {
   id: OrderDirection
   name: OrderDirection
   description: OrderDirection
   price: OrderDirection
+  stock: OrderDirection
+  createdAt: OrderDirection
+  updatedAt: OrderDirection
   status: OrderDirection
 }
 
@@ -181,15 +199,17 @@ input ProductUpdateInput {
   name: String
   description: String
   price: Int
+  stock: Int
+  createdAt: DateTime
+  updatedAt: DateTime
   status: String
-  photo: ProductImageRelateToManyForUpdateInput
+  photo: ProductImageRelateToOneForUpdateInput
 }
 
-input ProductImageRelateToManyForUpdateInput {
-  disconnect: [ProductImageWhereUniqueInput!]
-  set: [ProductImageWhereUniqueInput!]
-  create: [ProductImageCreateInput!]
-  connect: [ProductImageWhereUniqueInput!]
+input ProductImageRelateToOneForUpdateInput {
+  create: ProductImageCreateInput
+  connect: ProductImageWhereUniqueInput
+  disconnect: Boolean
 }
 
 input ProductUpdateArgs {
@@ -201,13 +221,16 @@ input ProductCreateInput {
   name: String
   description: String
   price: Int
+  stock: Int
+  createdAt: DateTime
+  updatedAt: DateTime
   status: String
-  photo: ProductImageRelateToManyForCreateInput
+  photo: ProductImageRelateToOneForCreateInput
 }
 
-input ProductImageRelateToManyForCreateInput {
-  create: [ProductImageCreateInput!]
-  connect: [ProductImageWhereUniqueInput!]
+input ProductImageRelateToOneForCreateInput {
+  create: ProductImageCreateInput
+  connect: ProductImageWhereUniqueInput
 }
 
 type ProductImage {
@@ -481,11 +504,6 @@ enum KeystoneAdminUIFieldMetaItemViewFieldMode {
   edit
   read
   hidden
-}
-
-enum QueryMode {
-  default
-  insensitive
 }
 
 type KeystoneAdminUISort {
