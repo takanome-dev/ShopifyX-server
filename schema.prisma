@@ -13,10 +13,11 @@ generator client {
 }
 
 model User {
-  id       String @id @default(cuid())
-  username String @default("")
-  email    String @unique @default("")
-  password String
+  id                     String    @id @default(cuid())
+  username               String    @default("")
+  email                  String    @unique @default("")
+  password               String
+  from_Product_createdBy Product[] @relation("Product_createdBy")
 }
 
 model Product {
@@ -25,11 +26,15 @@ model Product {
   description String        @default("")
   price       Int?
   stock       Int?
+  createdBy   User?         @relation("Product_createdBy", fields: [createdById], references: [id])
+  createdById String?       @map("createdBy")
   createdAt   DateTime?     @default(now())
   updatedAt   DateTime?
   status      String?       @default("DRAFT")
   photo       ProductImage? @relation("Product_photo", fields: [photoId], references: [id])
   photoId     String?       @unique @map("photo")
+
+  @@index([createdById])
 }
 
 model ProductImage {

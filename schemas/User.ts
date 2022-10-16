@@ -6,6 +6,10 @@ export const User = list({
     username: text({ validation: { isRequired: true } }),
     email: text({ validation: { isRequired: true }, isIndexed: 'unique' }),
     password: password({ validation: { isRequired: true } }),
+    // products: relationship({
+    //   ref: 'Product.createdBy',
+    //   many: true,
+    // }),
   },
   ui: {
     listView: {

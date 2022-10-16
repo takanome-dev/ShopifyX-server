@@ -105,6 +105,7 @@ type Product {
   description: String
   price: Int
   stock: Int
+  createdBy: User
   createdAt: DateTime
   updatedAt: DateTime
   status: String
@@ -127,6 +128,7 @@ input ProductWhereInput {
   description: StringFilter
   price: IntNullableFilter
   stock: IntNullableFilter
+  createdBy: UserWhereInput
   createdAt: DateTimeNullableFilter
   updatedAt: DateTimeNullableFilter
   status: StringNullableFilter
@@ -200,10 +202,17 @@ input ProductUpdateInput {
   description: String
   price: Int
   stock: Int
+  createdBy: UserRelateToOneForUpdateInput
   createdAt: DateTime
   updatedAt: DateTime
   status: String
   photo: ProductImageRelateToOneForUpdateInput
+}
+
+input UserRelateToOneForUpdateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
 }
 
 input ProductImageRelateToOneForUpdateInput {
@@ -222,10 +231,16 @@ input ProductCreateInput {
   description: String
   price: Int
   stock: Int
+  createdBy: UserRelateToOneForCreateInput
   createdAt: DateTime
   updatedAt: DateTime
   status: String
   photo: ProductImageRelateToOneForCreateInput
+}
+
+input UserRelateToOneForCreateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
 }
 
 input ProductImageRelateToOneForCreateInput {

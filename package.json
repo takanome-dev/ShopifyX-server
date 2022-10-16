@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "keystone dev",
     "seed-data": "keystone dev --seed-data",
+    "reset": "keystone dev --reset-db",
     "start": "keystone start",
     "build": "keystone build",
     "postinstall": "keystone postinstall"

@@ -18,10 +18,10 @@ export const Product = list({
     }),
     price: integer({ validation: { min: 1 } }),
     stock: integer(),
-    // createdBy: relationship({
-    //   ref: 'User.id',
-    //   many: true,
-    // }),
+    createdBy: relationship({
+      ref: 'User',
+      many: false,
+    }),
     createdAt: timestamp({
       defaultValue: {
         kind: 'now',

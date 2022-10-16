@@ -17,7 +17,6 @@ export default withAuth(
       provider: 'postgresql',
       url: process.env.DATABASE_URL as string,
       async onConnect(keystone) {
-        console.log('connecting to db...');
         if (process.argv.includes('--seed-data')) {
           await insertSeedData(keystone);
         }

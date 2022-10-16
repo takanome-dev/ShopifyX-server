@@ -7,8 +7,7 @@ export interface Product {
   price: number;
   stock: number;
   photo: Image;
-  createdBy?: string | null;
-  updatedBy?: string | null;
+  createdById: string;
   updatedAt: string;
   createdAt: string;
 }
