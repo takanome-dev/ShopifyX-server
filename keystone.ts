@@ -10,8 +10,21 @@ import { insertSeedData } from './seed-data';
 
 export default withAuth(
   // Using the config function helps typescript guide you to the available options.
-  // TODO: add server with cors options
   config({
+    // TODO: add server with cors options
+    server: {
+      cors: {
+        origin: [process.env.FRONTEND_URL as string],
+      },
+      healthCheck: {
+        path: '/health-check',
+        data: () => ({
+          status: 'healthy',
+          timestamp: Date.now(),
+          uptime: process.uptime(),
+        }),
+      },
+    },
     // the db sets the database provider - we're using sqlite for the fastest startup experience
     db: {
       provider: 'postgresql',
