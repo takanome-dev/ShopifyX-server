@@ -1791,10 +1791,10 @@
     fast-deep-equal "^3.1.3"
     graphql "^15.8.0"
 
-"@keystone-6/cloudinary@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@keystone-6/cloudinary/-/cloudinary-4.0.1.tgz#36d1431d298a1863ef51d603b7e09926b8898e27"
-  integrity sha512-9e3+0cIF24EJXyMonXIBQ0NQ/dpFf0A8F+/IKce57jx2vPj0vzvqA4xmTD3FMmG2Zhg/q5vuaY6jcuzdI1xMQA==
+"@keystone-6/cloudinary@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@keystone-6/cloudinary/-/cloudinary-5.0.0.tgz#a42fcd064e987d628a6d5655ed27a71f7d6609b0"
+  integrity sha512-7Kf1DhlNekUY2RVdGmcHenYQUZzZg9OGvraEusFYTam1n0LTF4ti0hjden9VgM+aji3k6hk4eznQ5T4S/ZjoRQ==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@keystone-ui/button" "^7.0.1"
