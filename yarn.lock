@@ -1766,7 +1766,7 @@
   resolved "https://registry.yarnpkg.com/@js-joda/core/-/core-5.4.1.tgz#984922e386169c60a95cdb60bd6199338e9d6e4c"
   integrity sha512-+uMco2Xm9VYJ81XYWwrvgsM9xEvqs9JvLNrN4/fOg7YJKk4yeqAg+O/cpoFPTGxvfL2Zy0mUcnKlIz9UV0Cadw==
 
-"@keystone-6/auth@^4.0.0":
+"@keystone-6/auth@4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@keystone-6/auth/-/auth-4.0.1.tgz#755746e194185fd25758d43f4fc930ab96bb9777"
   integrity sha512-9flBu0ZFkmabzj+IaWrjX8EzWczQ7gO8hoFOmNHocEWGSB+tIx6q3EEE6upd2acERSnVlRAWrPwudMhnTYYcSQ==
@@ -1781,7 +1781,7 @@
     fast-deep-equal "^3.1.3"
     graphql "^15.8.0"
 
-"@keystone-6/cloudinary@^4.0.1":
+"@keystone-6/cloudinary@4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@keystone-6/cloudinary/-/cloudinary-4.0.1.tgz#36d1431d298a1863ef51d603b7e09926b8898e27"
   integrity sha512-9e3+0cIF24EJXyMonXIBQ0NQ/dpFf0A8F+/IKce57jx2vPj0vzvqA4xmTD3FMmG2Zhg/q5vuaY6jcuzdI1xMQA==
@@ -1901,7 +1901,7 @@
   resolved "https://registry.yarnpkg.com/@keystone-6/document-renderer/-/document-renderer-1.1.1.tgz#cece98bf38ec38953d7bcb8d0e3799aba2af0568"
   integrity sha512-OziNXEaZwSUWQuA04lbUPzUDyBqc1zxtmw2VAHt51adT6PvTihB58fWhBQ9H17Mytk4Egup4xI3bs7KpG98TOw==
 
-"@keystone-6/fields-document@^4.0.1":
+"@keystone-6/fields-document@4.1.2":
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@keystone-6/fields-document/-/fields-document-4.1.2.tgz#33e9bc35fe2e8117aa23057d84623ce45a0c31aa"
   integrity sha512-gR6OmTut1ZDovnTcG5NNMLD7HzSnr8BLdVGcckuxqcrYLgyaRFIYyniTcLR8em7F6mBOCYI7cD9DUG86LFuNjg==
@@ -3679,7 +3679,7 @@ dotenv@16.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.0.tgz#c619001253be89ebb638d027b609c75c26e47411"
   integrity sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==
 
-dotenv@^16.0.3:
+dotenv@16.0.3:
   version "16.0.3"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
   integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
@@ -4307,7 +4307,7 @@ graphql-upload@^15.0.2:
     http-errors "^2.0.0"
     object-path "^0.11.8"
 
-"graphql@14 - 16", graphql@^15.8.0:
+"graphql@14 - 16", graphql@15.8.0, graphql@^15.8.0:
   version "15.8.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.8.0.tgz#33410e96b012fa3bdb1091cc99a94769db212b38"
   integrity sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==
@@ -6924,7 +6924,7 @@ type-is@^1.6.18, type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-typescript@^4.7.4:
+typescript@4.8.4:
   version "4.8.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.4.tgz#c464abca159669597be5f96b8943500b238e60e6"
   integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==
