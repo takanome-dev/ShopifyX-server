@@ -11,10 +11,10 @@ import { insertSeedData } from './seed-data';
 export default withAuth(
   // Using the config function helps typescript guide you to the available options.
   config({
-    // TODO: add server with cors options
     server: {
       cors: {
         origin: [process.env.FRONTEND_URL as string],
+        credentials: true,
       },
       healthCheck: {
         path: '/health-check',
