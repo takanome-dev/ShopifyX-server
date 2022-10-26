@@ -1766,10 +1766,10 @@
   resolved "https://registry.yarnpkg.com/@js-joda/core/-/core-5.4.1.tgz#984922e386169c60a95cdb60bd6199338e9d6e4c"
   integrity sha512-+uMco2Xm9VYJ81XYWwrvgsM9xEvqs9JvLNrN4/fOg7YJKk4yeqAg+O/cpoFPTGxvfL2Zy0mUcnKlIz9UV0Cadw==
 
-"@keystone-6/auth@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@keystone-6/auth/-/auth-4.0.1.tgz#755746e194185fd25758d43f4fc930ab96bb9777"
-  integrity sha512-9flBu0ZFkmabzj+IaWrjX8EzWczQ7gO8hoFOmNHocEWGSB+tIx6q3EEE6upd2acERSnVlRAWrPwudMhnTYYcSQ==
+"@keystone-6/auth@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@keystone-6/auth/-/auth-5.0.0.tgz#379a0c1bcab705a4ac19e9b33991b2b56866ea65"
+  integrity sha512-1yh3BN88ceuvXG2jt8kZ4yvLoIQD556kU+Hl8wWvHDhUnZwbnfXtUODVXqOYLxB/pt+4nQEDEqdcZ0s5hdbOiw==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@keystone-ui/button" "^7.0.1"
@@ -1779,7 +1779,7 @@
     "@keystone-ui/notice" "^6.0.1"
     cross-fetch "^3.1.4"
     fast-deep-equal "^3.1.3"
-    graphql "^15.8.0"
+    graphql "^16.6.0"
 
 "@keystone-6/cloudinary@^4.0.1":
   version "4.0.1"
@@ -4307,7 +4307,7 @@ graphql-upload@^15.0.2:
     http-errors "^2.0.0"
     object-path "^0.11.8"
 
-"graphql@14 - 16", graphql@^15.8.0:
+"graphql@14 - 16", graphql@^15.8.0, graphql@^16.6.0:
   version "15.8.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.8.0.tgz#33410e96b012fa3bdb1091cc99a94769db212b38"
   integrity sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==
