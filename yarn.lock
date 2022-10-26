@@ -1901,10 +1901,10 @@
   resolved "https://registry.yarnpkg.com/@keystone-6/document-renderer/-/document-renderer-1.1.1.tgz#cece98bf38ec38953d7bcb8d0e3799aba2af0568"
   integrity sha512-OziNXEaZwSUWQuA04lbUPzUDyBqc1zxtmw2VAHt51adT6PvTihB58fWhBQ9H17Mytk4Egup4xI3bs7KpG98TOw==
 
-"@keystone-6/fields-document@^4.0.1":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@keystone-6/fields-document/-/fields-document-4.1.2.tgz#33e9bc35fe2e8117aa23057d84623ce45a0c31aa"
-  integrity sha512-gR6OmTut1ZDovnTcG5NNMLD7HzSnr8BLdVGcckuxqcrYLgyaRFIYyniTcLR8em7F6mBOCYI7cD9DUG86LFuNjg==
+"@keystone-6/fields-document@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@keystone-6/fields-document/-/fields-document-5.0.0.tgz#a10b9dc85f2e465855be050e8f9382c79d78cbc6"
+  integrity sha512-rR6ZcVC1trN06ymH1VjvT1m3oL3yXos7MYWylSEyQ5YFY9LXm5QHlzgXaBh9eetcK8GhaYkIDRSd1SzieBJ2Vg==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@braintree/sanitize-url" "^6.0.0"
@@ -1923,7 +1923,7 @@
     apollo-server-errors "^3.3.0"
     apply-ref "^1.0.0"
     fp-ts "^2.11.5"
-    graphql "^15.8.0"
+    graphql "^16.6.0"
     io-ts "^2.2.16"
     io-ts-excess "^1.0.1"
     is-hotkey "^0.2.0"
@@ -4307,7 +4307,7 @@ graphql-upload@^15.0.2:
     http-errors "^2.0.0"
     object-path "^0.11.8"
 
-"graphql@14 - 16", graphql@^15.8.0:
+"graphql@14 - 16", graphql@^15.8.0, graphql@^16.6.0:
   version "15.8.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.8.0.tgz#33410e96b012fa3bdb1091cc99a94769db212b38"
   integrity sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==
