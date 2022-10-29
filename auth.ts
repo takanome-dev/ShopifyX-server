@@ -11,6 +11,7 @@ import { createAuth } from '@keystone-6/auth';
 
 // See https://keystonejs.com/docs/apis/session#session-api for the session docs
 import { statelessSessions } from '@keystone-6/core/session';
+import { sendMail } from './lib/mail';
 
 let sessionSecret = process.env.SESSION_SECRET;
 
@@ -35,11 +36,18 @@ const { withAuth } = createAuth({
   sessionData: 'username',
   secretField: 'password',
   initFirstItem: {
-    // If there are no items in the database, keystone will ask you to create
-    // a new user, filling in these fields.
     fields: ['username', 'email', 'password'],
     // TODO: add initial roles...
   },
+  passwordResetLink: {
+    sendToken: async ({itemId, token, context}) => {
+      // console.log({itemId, token, identity,context})
+      const user = await context.prisma.user.findUnique({
+        where: {id: itemId}
+      })
+      await sendMail(user, token)
+    }
+  }
 });
 
 // This defines how long people will remain logged in for.
