@@ -11,6 +11,7 @@ import { createAuth } from '@keystone-6/auth';
 
 // See https://keystonejs.com/docs/apis/session#session-api for the session docs
 import { statelessSessions } from '@keystone-6/core/session';
+import { sendMail } from './lib/mail';
 
 let sessionSecret = process.env.SESSION_SECRET;
 
@@ -39,8 +40,12 @@ const { withAuth } = createAuth({
     // TODO: add initial roles...
   },
   passwordResetLink: {
-    sendToken: async ({itemId, token, identity}) => {
-      console.log({itemId, token, identity})
+    sendToken: async ({itemId, token, context}) => {
+      // console.log({itemId, token, identity,context})
+      const user = await context.prisma.user.findUnique({
+        where: {id: itemId}
+      })
+      await sendMail(user, token)
     }
   }
 });
