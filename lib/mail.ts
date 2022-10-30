@@ -23,7 +23,7 @@ export default async function sendMail(user: User, token: string)  {
     viewEngine: {
       extname: '.hbs',
       partialsDir: path.resolve('emails'),
-      defaultLayout: false
+      defaultLayout: path.resolve('emails/layouts/main')
     },
     extName: '.hbs',
     viewPath: path.resolve('emails'),
