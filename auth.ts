@@ -12,6 +12,7 @@ import { createAuth } from '@keystone-6/auth';
 // See https://keystonejs.com/docs/apis/session#session-api for the session docs
 import { statelessSessions } from '@keystone-6/core/session';
 import sendMail from './lib/mail';
+import { User } from './types';
 
 let sessionSecret = process.env.SESSION_SECRET;
 
@@ -40,14 +41,22 @@ const { withAuth } = createAuth({
     // TODO: add initial roles...
   },
   passwordResetLink: {
-    sendToken: async ({itemId, token, context}) => {
+    sendToken: async ({ itemId, token, context }) => {
       // console.log({itemId, token, identity,context})
-      const user = await context.prisma.user.findUnique({
-        where: {id: itemId}
-      })
-      await sendMail(user, token)
-    }
-  }
+      const user = (await context.prisma.user.findUnique({
+        where: { id: itemId },
+      })) as User;
+
+      // if (!user.email)
+      //   throw new Error(
+      //     'The user is not found, please enter a valid email address.'
+      //   );
+
+      console.log({ user });
+
+      sendMail(user, token);
+    },
+  },
 });
 
 // This defines how long people will remain logged in for.

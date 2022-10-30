@@ -1,31 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cyan: '#02c5f5',
-            teal: '#92fe9e',
-          }
-        }
-      }
-    }
-  </script>
-  <title>Password Reset Email</title>
-</head>
-<body class="bg-gradient-to-r from-cyan to-teal flex justify-center items-center">
-  <div class="bg-white rounded-lg w-20 h-full p-8">
-    <p>Hey {{name}}, hope you are doing well.</p>
-    <p>click the following link to reset your password:</p>
-    <a href="{{url}}">Reset Password</a>
-    <p>Best,</p>
-    <strong>TAKANOME DEV</strong>
+<div class='reset-card'>
+  <h2>Forgot your password?</h2>
+
+  <p>
+    You are receiving this because you (or someone else) requested the reset of
+    the '<em style='color: var(--darker);font-weight:600'>{{name}}</em>'
+    ClickToBut user account.
+  </p>
+
+  <p>
+    Create a new password by clicking the button below. This link will expire
+    within the next hour.
+  </p>
+
+  <div class='reset-link'>
+    <a href='{{url}}'>Reset your password</a>
   </div>
-</body>
-</html>
+
+  <div class='reset-info'>
+    <p style='opacity: 0.6;'>
+      This is an automated email. If you received it by mistake, you don’t need
+      to do anything, just ignore it.
+    </p>
+
+    <p>
+      For more info,
+      <a
+        href='mailto:takanomedev221@gmail.com'
+        style='color: var(--blue);'
+      >contact us</a></p>
+  </div>
+
+</div>
