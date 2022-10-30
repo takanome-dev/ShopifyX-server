@@ -1,11 +1,9 @@
-import nodemailer from 'nodemailer'
-import path from 'path'
-import hbs from 'nodemailer-express-handlebars'
-import { User } from '../types'
+import nodemailer from 'nodemailer';
+import path from 'path';
+import hbs from 'nodemailer-express-handlebars';
+import { User } from '../types';
 
-
-
-export default async function sendMail(user: User, token: string)  {
+export default async function sendMail(user: User, token: string) {
   const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
@@ -17,35 +15,34 @@ export default async function sendMail(user: User, token: string)  {
     logger: true,
     // TODO: remove debugger on prod
     // debug: true
-  })
-  
-  transporter.use('compile', hbs({
-    viewEngine: {
-      extname: '.hbs',
-      partialsDir: path.resolve('emails'),
-      defaultLayout: path.resolve('emails/layouts/main')
-    },
-    extName: '.hbs',
-    viewPath: path.resolve('emails'),
-  }))
+  });
 
-try {
+  transporter.use(
+    'compile',
+    hbs({
+      viewEngine: {
+        extname: '.hbs',
+        partialsDir: path.resolve('emails'),
+        defaultLayout: path.resolve('emails/layouts/main'),
+      },
+      extName: '.hbs',
+      viewPath: path.resolve('emails'),
+    })
+  );
+
   await transporter.sendMail({
-   from: 'TAKANOME DEV <takanome@gmail.com>',
-   to: process.env.ETHEREAL_EMAIL,
-   subject: 'Password Reset Link',
-   // @ts-ignore
-   template: 'reset',
-   context: {
-    token,
-    name: user.username,
-    url:`${process.env.FRONTEND_URL}?email=${user.email}&token=${token}`
-   } 
- })
+    from: 'TAKANOME DEV <takanome@gmail.com>',
+    to: process.env.ETHEREAL_EMAIL,
+    subject: 'Reset Your Password',
+    // @ts-ignore
+    template: 'reset',
+    context: {
+      token,
+      name: user.username,
+      url: `${process.env.FRONTEND_URL}/reset-password?email=${user.email}&token=${token}`,
+    },
+  });
 
- console.log(`📫 email sent to ${user.email}`)
-//  console.log(`Preview link: ${nodemailer.getTestMessageUrl(info)}`)
-} catch (error) {
-  console.error(`Catch Error: ${error}`)
-}
+  console.log(`📫 email sent to ${user.email}`);
+  //  console.log(`Preview link: ${nodemailer.getTestMessageUrl(info)}`)
 }
