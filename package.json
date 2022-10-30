@@ -16,9 +16,11 @@
     "@keystone-6/core": "^2.1.0",
     "@keystone-6/fields-document": "^4.0.1",
     "dotenv": "^16.0.3",
+    "email-templates": "^10.0.1",
     "graphql": "^15.8.0",
     "next": "12.2.4",
     "nodemailer": "^6.8.0",
+    "nodemailer-express-handlebars": "^5.0.0",
     "typescript": "^4.7.4"
   },
   "// yarn": "this is a temporary workaround for yarn users, see https://github.com/keystonejs/create-keystone-app/pull/350",
@@ -27,6 +29,8 @@
     "next": "12.2.4"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.6"
+    "@types/email-templates": "^10.0.1",
+    "@types/nodemailer": "^6.4.6",
+    "@types/nodemailer-express-handlebars": "^4.0.2"
   }
 }
