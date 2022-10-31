@@ -1,3 +1,4 @@
+import { CartItem } from './CartItem';
 import { ProductImage } from './ProductImage';
 import { Product } from './Product';
 import { User } from './User';
@@ -12,4 +13,5 @@ export const lists = {
   User,
   Product,
   ProductImage,
+  CartItem,
 };
