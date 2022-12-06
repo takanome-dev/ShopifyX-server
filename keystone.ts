@@ -1,20 +1,17 @@
 import 'dotenv/config';
 import { config } from '@keystone-6/core';
 
-// Look in the schema file for how we define our lists, and how users interact with them through graphql or the Admin UI
 import { lists } from './schemas';
 
-// Keystone auth is configured separately - check out the basic auth setup we are importing from our auth file.
 import { withAuth, session } from './auth';
 import { insertSeedData } from './seed-data';
 
 export default withAuth(
-  // Using the config function helps typescript guide you to the available options.
   config({
-    // TODO: add server with cors options
     server: {
       cors: {
         origin: [process.env.FRONTEND_URL as string],
+        credentials: true,
       },
       healthCheck: {
         path: '/health-check',
@@ -25,7 +22,6 @@ export default withAuth(
         }),
       },
     },
-    // the db sets the database provider - we're using sqlite for the fastest startup experience
     db: {
       provider: 'postgresql',
       url: process.env.DATABASE_URL as string,

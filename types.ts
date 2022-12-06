@@ -38,3 +38,13 @@ export interface Image {
     original_filename: string;
   };
 }
+
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  passwordResetToken: string;
+  passwordResetIssuedAt: number | null;
+  passwordResetRedeemedAt: number | null;
+}

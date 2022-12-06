@@ -1,16 +1,8 @@
-/*
-Welcome to the auth file! Here we have put a config to do basic auth in Keystone.
-
-`createAuth` is an implementation for an email-password login out of the box.
-`statelessSessions` is a base implementation of session logic.
-
-For more on auth, check out: https://keystonejs.com/docs/apis/auth#authentication-api
-*/
-
 import { createAuth } from '@keystone-6/auth';
 
-// See https://keystonejs.com/docs/apis/session#session-api for the session docs
 import { statelessSessions } from '@keystone-6/core/session';
+import sendMail from './lib/mail';
+import { User } from './types';
 
 let sessionSecret = process.env.SESSION_SECRET;
 
@@ -35,10 +27,17 @@ const { withAuth } = createAuth({
   sessionData: 'username',
   secretField: 'password',
   initFirstItem: {
-    // If there are no items in the database, keystone will ask you to create
-    // a new user, filling in these fields.
     fields: ['username', 'email', 'password'],
     // TODO: add initial roles...
+  },
+  passwordResetLink: {
+    sendToken: async ({ itemId, token, context }) => {
+      const user = (await context.query.User.findOne({
+        where: { id: itemId as string },
+      })) as User;
+
+      sendMail(user, token);
+    },
   },
 });
 
