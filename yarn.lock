@@ -1865,7 +1865,7 @@
     cuid "^2.1.8"
     react "^18.2.0"
 
-"@keystone-6/core@^2.1.0":
+"@keystone-6/core@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@keystone-6/core/-/core-2.3.1.tgz#33171d8c0ac0a1f64c1e6a88b153718e2b0ec52f"
   integrity sha512-C6Ngn2iydcUOD6MwFe6qIekq3el5RscJNpNZvOatEPGkFW3nKV34HNXsGXsn1Q9fCWRtlv2vwGI0pZO13xQ6cQ==
@@ -4333,6 +4333,20 @@ email-templates@^10.0.1:
     nodemailer "^6.7.7"
     preview-email "^3.0.7"
 
+email-templates@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/email-templates/-/email-templates-10.0.1.tgz#00ed3d394c3b64fa7b8127027e52b01d70c468d4"
+  integrity sha512-LNZKS0WW9XQkjuDZd/4p/1Q/pwqaqXOP3iDxTIVIQY9vuHlIUEcRLFo8/Xh3GtZCBnm181VgvOXIABKTVyTePA==
+  dependencies:
+    "@ladjs/i18n" "^8.0.1"
+    consolidate "^0.16.0"
+    get-paths "^0.0.7"
+    html-to-text "^8.2.0"
+    juice "^8.0.0"
+    lodash "^4.17.21"
+    nodemailer "^6.7.7"
+    preview-email "^3.0.7"
+
 emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
@@ -5520,6 +5534,18 @@ graphql-upload@^15.0.2:
   version "16.6.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.6.0.tgz#c2dcffa4649db149f6282af726c8c83f1c7c5fdb"
   integrity sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==
+
+handlebars@^4.7.7:
+  version "4.7.7"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"
+  integrity sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
+  dependencies:
+    minimist "^1.2.5"
+    neo-async "^2.6.0"
+    source-map "^0.6.1"
+    wordwrap "^1.0.0"
+  optionalDependencies:
+    uglify-js "^3.1.4"
 
 handlebars@^4.7.7:
   version "4.7.7"
@@ -8592,7 +8618,7 @@ strip-bom@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
   integrity sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==
-
+  
 strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
