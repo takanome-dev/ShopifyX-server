@@ -39,13 +39,12 @@ export interface Image {
   };
 }
 
-
 export interface User {
-  id: string
-  username: string
-  email: string
-  password: string
-  passwordResetToken: string
-  passwordResetIssuedAt: number | null
-  passwordResetRedeemedAt: number | null
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  passwordResetToken: string;
+  passwordResetIssuedAt: number | null;
+  passwordResetRedeemedAt: number | null;
 }

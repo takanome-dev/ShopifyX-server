@@ -1,17 +1,8 @@
-/*
-Welcome to the auth file! Here we have put a config to do basic auth in Keystone.
-
-`createAuth` is an implementation for an email-password login out of the box.
-`statelessSessions` is a base implementation of session logic.
-
-For more on auth, check out: https://keystonejs.com/docs/apis/auth#authentication-api
-*/
-
 import { createAuth } from '@keystone-6/auth';
 
-// See https://keystonejs.com/docs/apis/session#session-api for the session docs
 import { statelessSessions } from '@keystone-6/core/session';
 import sendMail from './lib/mail';
+import { User } from './types';
 
 let sessionSecret = process.env.SESSION_SECRET;
 
@@ -40,14 +31,14 @@ const { withAuth } = createAuth({
     // TODO: add initial roles...
   },
   passwordResetLink: {
-    sendToken: async ({itemId, token, context}) => {
-      // console.log({itemId, token, identity,context})
-      const user = await context.prisma.user.findUnique({
-        where: {id: itemId}
-      })
-      await sendMail(user, token)
-    }
-  }
+    sendToken: async ({ itemId, token, context }) => {
+      const user = (await context.query.User.findOne({
+        where: { id: itemId as string },
+      })) as User;
+
+      sendMail(user, token);
+    },
+  },
 });
 
 // This defines how long people will remain logged in for.
