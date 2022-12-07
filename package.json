@@ -1,7 +1,20 @@
 {
-  "name": "keystone-app",
-  "version": "1.0.2",
+  "name": "ShopifyX-server",
+  "description": "The One-Stop Shop for All Your E-Commerce Needs 🛒",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/TAKANOME-DEV/ShopifyX-server#readme",
+  "bugs": {
+    "url": "https://github.com/TAKANOME-DEV/ShopifyX-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TAKANOME-DEV/ShopifyX-server.git"
+  },
+  "engines": {
+    "node": ">= 16.7.0",
+    "npm": ">= 8.0.0"
+  },
   "scripts": {
     "build": "keystone build",
     "dev": "keystone dev",

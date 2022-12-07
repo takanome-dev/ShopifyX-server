@@ -12,6 +12,8 @@ RUN yarn install
 
 COPY . .
 
+RUN yarn seed-data
+
 EXPOSE 3000
 
 CMD [ "yarn", "dev" ]
