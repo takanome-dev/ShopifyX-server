@@ -24,7 +24,7 @@
     "graphql": "^16.0.0",
     "next": "12.3.4",
     "nodemailer": "^6.8.0",
-    "nodemailer-express-handlebars": "^5.0.0",
+    "nodemailer-express-handlebars": "^6.0.0",
     "typescript": "^5.0.0"
   },
   "// yarn": "this is a temporary workaround for yarn users, see https://github.com/keystonejs/create-keystone-app/pull/350",
