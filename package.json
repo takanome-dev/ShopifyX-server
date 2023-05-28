@@ -15,7 +15,7 @@
     "start": "keystone start"
   },
   "dependencies": {
-    "@keystone-6/auth": "^4.0.0",
+    "@keystone-6/auth": "^7.0.0",
     "@keystone-6/cloudinary": "^7.0.0",
     "@keystone-6/core": "^2.1.0",
     "@keystone-6/fields-document": "^8.0.0",
