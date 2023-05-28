@@ -20,7 +20,7 @@
     "@keystone-6/core": "^2.1.0",
     "@keystone-6/fields-document": "^4.0.1",
     "dotenv": "^16.0.3",
-    "email-templates": "^10.0.1",
+    "email-templates": "^11.0.0",
     "graphql": "^16.0.0",
     "next": "12.3.4",
     "nodemailer": "^6.8.0",
