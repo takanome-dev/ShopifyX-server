@@ -4189,9 +4189,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 email-templates@^11.0.0:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/email-templates/-/email-templates-11.1.0.tgz#e45535eebbbca99e250866861d39455c5ed874ad"
-  integrity sha512-71sIgaRBBNObokMboww9o5BECcHE8hPO8vZ7XS1Z+CuldzJ/Mb2M3jgIHL0mBtMLSXXOB/ie6pDY18jaj+tK/w==
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/email-templates/-/email-templates-11.1.1.tgz#7081d72ec7e065f23596045678bc32ee0e4dcada"
+  integrity sha512-MEf/KlM/FokY7Hy3MBLZI5S4lOna0a2SX0tVzKc+VWSIc5/dq19wDkRVl28RgWtKK0Dfb+Z0iqbuk2BnIRfyDg==
   dependencies:
     "@ladjs/consolidate" "^1.0.1"
     "@ladjs/i18n" "^8.0.3"
@@ -7276,9 +7276,9 @@ prettier@^2.7.1:
   integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
 preview-email@^3.0.17:
-  version "3.0.17"
-  resolved "https://registry.yarnpkg.com/preview-email/-/preview-email-3.0.17.tgz#e33ad412da8d594675e21496455fd77bac8366df"
-  integrity sha512-NBcQkeaDTe6Skb+eTghImuSW1Ew9Z65jQVOldYUe3QcGRRCeDdeauJenlL6RFmzCIlSnRi74NcEiNrKAinmkeA==
+  version "3.0.19"
+  resolved "https://registry.yarnpkg.com/preview-email/-/preview-email-3.0.19.tgz#6fe9333022e5db664e76913d825e7b5f22249359"
+  integrity sha512-DBS3Nir18YtKc8loYCCOGitmiaQ0vTdahPoiXxwNweJDpmVZo+w3tppufOhoK0m8skpRxT56llYLs3VrORnmNQ==
   dependencies:
     ci-info "^3.8.0"
     display-notification "2.0.0"
@@ -8472,9 +8472,9 @@ tlds@1.236.0:
   integrity sha512-oP2PZ3KeGlgpHgsEfrtva3/K9kzsJUNliQSbCfrJ7JMCWFoCdtG+9YMq/g2AnADQ1v5tVlbtvKJZ4KLpy/P6MA==
 
 tlds@^1.231.0:
-  version "1.239.0"
-  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.239.0.tgz#99c61a8a22c1252cfb563ef1cfd367b537ff62e6"
-  integrity sha512-lhiymAloYTizXVGDVnplwjQK2YkiB30k5bbeZlyZ6u2vbG4q7re+fwTlOeliCcfiqvmK3yv9savLIFzfKjAVQg==
+  version "1.240.0"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.240.0.tgz#3d3d776d97aa079e43ef4d2f9ef9845e55cff08e"
+  integrity sha512-1OYJQenswGZSOdRw7Bql5Qu7uf75b+F3HFBXbqnG/ifHa0fev1XcG+3pJf3pA/KC6RtHQzfKgIf1vkMlMG7mtQ==
 
 tmp@0.2.1:
   version "0.2.1"
